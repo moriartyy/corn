@@ -11,8 +11,12 @@ public class Dictionary {
 		instances.put(key, dic);
 	}
 	
-	public synchronized static Dictionary get(Object key) {
+	public static Dictionary get(Object key) {
 		return instances.get(key);
+	}
+	
+	public static int instanceCount() {
+		return instances.size();
 	}
 
     public static Dictionary from(WordSourceFactory sourceFactory) {
@@ -24,6 +28,7 @@ public class Dictionary {
 
     private Dictionary(WordSourceFactory sourceFactory) {
     	this.sourceFactory = sourceFactory;
+    	this.loadWords();
     }
     
     public synchronized void reload() {
@@ -57,7 +62,7 @@ public class Dictionary {
     }
 
 	public static void relaod() {
-		
+		instances.forEach((k, v) -> { v.reload(); });
 	}
 
 }

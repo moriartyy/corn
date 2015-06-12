@@ -8,7 +8,7 @@ import com.hichao.analysis.corn.Lexeme;
 import com.hichao.analysis.corn.LexemeSet;
 import com.hichao.analysis.corn.LexemeType;
 
-public class TestLexemeSet {
+public class LexemeSetTests {
 
 	@Test
 	public void testLexemeSet() {

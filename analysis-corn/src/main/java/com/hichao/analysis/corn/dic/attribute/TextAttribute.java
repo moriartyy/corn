@@ -11,4 +11,9 @@ public class TextAttribute implements Attribute {
 	public String text() {
 		return text;
 	}
+
+	@Override
+	public void merge(Attribute a) {
+		// Nothing to merge.
+	}
 }

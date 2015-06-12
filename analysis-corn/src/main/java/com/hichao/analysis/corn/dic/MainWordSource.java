@@ -7,9 +7,9 @@ import java.util.Properties;
 public class MainWordSource extends SqlWordSource {
 	
 	public MainWordSource(Properties configs) {
-		super(configs.getProperty("wordsources.main.url"), configs
-				.getProperty("wordsources.main.user_name"), configs
-				.getProperty("wordsources.main.password"));
+		super(configs.getProperty("word_source.main.url"), configs
+				.getProperty("word_source.main.user_name"), configs
+				.getProperty("word_source.main.password"));
 	}
 
 	@Override

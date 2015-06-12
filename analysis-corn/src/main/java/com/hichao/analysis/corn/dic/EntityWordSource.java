@@ -20,9 +20,9 @@ public class EntityWordSource implements WordSource {
 	private Iterator<Word> wordIterator;
 	
 	public EntityWordSource(Properties configs) {
-		this.url = configs.getProperty("wordsources.entity.url");
-		this.userName = configs.getProperty("wordsources.entity.user_name");
-		this.password = configs.getProperty("wordsources.entity.password");
+		this.url = configs.getProperty("word_source.entity.url");
+		this.userName = configs.getProperty("word_source.entity.user_name");
+		this.password = configs.getProperty("word_source.entity.password");
 		this.wordIterator = loadAll().iterator();
 	}
 	
@@ -80,7 +80,10 @@ public class EntityWordSource implements WordSource {
 
 	@Override
 	public Word next() {
-		return wordIterator.next();
+		if (wordIterator.hasNext()) {
+			return wordIterator.next();
+		}
+		return null;
 	}
 
 }

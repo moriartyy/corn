@@ -6,7 +6,7 @@ import org.junit.Test;
 import com.hichao.analysis.corn.Lexeme;
 import com.hichao.analysis.corn.LexemeType;
 
-public class TestLexeme {
+public class LexemetTests {
 	
 	@Test
 	public void testLexemeCompare() {

@@ -55,8 +55,16 @@ public class Word implements AttributeSource<Word> {
 	}
 
 	@Override
-	public Word merge(Word o) {
-		this.attrs.putAll(o.attrs);
+	public Word merge(Word w) {
+		w.attrs.forEach((k, v) -> {
+			Attribute attr = attrs.get(k);
+			if (attr == null) {
+				attrs.put(k, v);
+			} else {
+				attr.merge(v);
+			}
+		});
+		this.attrs.putAll(w.attrs);
 		return this;
 	}
 }

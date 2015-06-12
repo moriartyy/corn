@@ -11,11 +11,22 @@ public class EntityAttribute implements Attribute {
 		entities.add(entity);
 	}
 	
+	public void addEntity(Entity entity) {
+		entities.add(entity);
+	}
+	
 	public Set<Entity> entities() {
 		return entities;
 	}
 
 	public int count() {
 		return entities.size();
+	}
+
+	@Override
+	public void merge(Attribute a) {
+		if (a instanceof EntityAttribute) {
+			entities.addAll(((EntityAttribute)a).entities);
+		}
 	}
 }

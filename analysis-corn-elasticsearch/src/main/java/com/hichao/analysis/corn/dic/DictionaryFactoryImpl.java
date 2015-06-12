@@ -35,7 +35,7 @@ public class DictionaryFactoryImpl implements DictionaryFactory {
 	private Properties configs;
 	
 	private DictionaryFactoryImpl(Environment environment) {
-		configFile = new File(environment.configFile(), "corn/corn.config");
+		configFile = new File(environment.configFile(), "corn/corn.conf");
 		loadConfg(configFile);
 		this.configs = loadConfg(configFile);
 	}
