@@ -20,7 +20,7 @@ public class CornAnalyzerRestAction extends BaseRestHandler {
     protected CornAnalyzerRestAction(Settings settings, Client client, RestController controller) {
         super(settings, controller, client);
 
-        controller.registerHandler(RestRequest.Method.GET, "/_ik/reload", this);
+        controller.registerHandler(RestRequest.Method.GET, "/_corn/reload", this);
     }
 
     @Override
@@ -33,6 +33,7 @@ public class CornAnalyzerRestAction extends BaseRestHandler {
             XContentBuilder builder = XContentFactory.jsonBuilder()
                     .startObject()
                     .field("ok", true)
+                    .field("instance_count", Dictionary.instanceCount())
                     .endObject();
 
             channel.sendResponse(new BytesRestResponse(RestStatus.OK, builder));

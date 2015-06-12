@@ -1,4 +1,4 @@
-package com.hichao.elasticsearch.index;
+package com.hichao.elasticsearch.index.analysis;
 
 import org.elasticsearch.common.inject.Inject;
 import org.elasticsearch.common.inject.assistedinject.Assisted;
@@ -21,7 +21,8 @@ public class CornAnalyzerProvider extends AbstractIndexAnalyzerProvider<CornAnal
         analyzer = new CornAnalyzer(DictionaryFactoryImpl.create(settings, environment), Strategy.MostWords);
     }
 
-    @Override public CornAnalyzer get() {
+    @Override 
+    public CornAnalyzer get() {
         return this.analyzer;
     }
 }

@@ -46,9 +46,8 @@
 						<configuration>
 							<artifactSet>
 								<includes>
-									<include>*:corn-segmenter</include>
-									<include>*:lucene-corn-segmenter</include>
-									<include>*:mysql-connector-java</include>
+									<include>*:analysis-corn</include>
+									<include>*:analysis-corn-lucene</include>
 								</includes>
 							</artifactSet>
 						</configuration>

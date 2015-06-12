@@ -1,4 +1,4 @@
-package com.hichao.elasticsearch.index;
+package com.hichao.elasticsearch.index.analysis;
 
 import org.elasticsearch.index.analysis.AnalysisModule;
 
@@ -11,14 +11,14 @@ public class CornAnalysisBinderProcessor extends AnalysisModule.AnalysisBinderPr
 
 
     @Override public void processAnalyzers(AnalyzersBindings analyzersBindings) {
-        analyzersBindings.processAnalyzer("ik", CornAnalyzerProvider.class);
+        analyzersBindings.processAnalyzer("corn", CornAnalyzerProvider.class);
         super.processAnalyzers(analyzersBindings);
     }
 
 
     @Override
     public void processTokenizers(TokenizersBindings tokenizersBindings) {
-      tokenizersBindings.processTokenizer("ik", CornTokenizerFactory.class);
+      tokenizersBindings.processTokenizer("corn", CornTokenizerFactory.class);
       super.processTokenizers(tokenizersBindings);
     }
 }

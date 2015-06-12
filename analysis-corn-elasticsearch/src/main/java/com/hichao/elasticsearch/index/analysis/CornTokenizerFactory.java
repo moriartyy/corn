@@ -1,4 +1,4 @@
-package com.hichao.elasticsearch.index;
+package com.hichao.elasticsearch.index.analysis;
 
 import org.apache.lucene.analysis.Tokenizer;
 import org.elasticsearch.common.inject.Inject;
