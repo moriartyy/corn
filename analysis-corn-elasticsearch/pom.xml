@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.hichao.analysis</groupId>
 		<artifactId>corn</artifactId>
-		<version>1.0</version>
+		<version>1.0.1</version>
 	</parent>
 	<artifactId>analysis-corn-elasticsearch</artifactId>
 	<dependencies>
@@ -19,12 +19,12 @@
 		<dependency>
 			<groupId>com.hichao.analysis</groupId>
 			<artifactId>analysis-corn</artifactId>
-			<version>1.0</version>
+			<version>1.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.hichao.analysis</groupId>
 			<artifactId>analysis-corn-lucene</artifactId>
-			<version>1.0</version>
+			<version>1.0.1</version>
 		</dependency>
 	</dependencies>
 	<build>
