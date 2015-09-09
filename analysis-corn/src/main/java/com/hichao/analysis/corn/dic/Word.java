@@ -3,6 +3,7 @@ package com.hichao.analysis.corn.dic;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.hichao.analysis.corn.dic.attribute.Attribute;
 import com.hichao.analysis.corn.dic.attribute.TextAttribute;
@@ -55,16 +56,15 @@ public class Word implements AttributeSource<Word> {
 	}
 
 	@Override
-	public Word merge(Word w) {
-		w.attrs.forEach((k, v) -> {
-			Attribute attr = attrs.get(k);
+	public Word merge(Word other) {
+		for (Entry<Class<? extends Attribute>, Attribute> entry : other.attrs.entrySet()) {
+			Attribute attr = attrs.get(entry.getKey());
 			if (attr == null) {
-				attrs.put(k, v);
+				attrs.put(entry.getKey(), entry.getValue());
 			} else {
-				attr.merge(v);
+				attr.merge(entry.getValue());
 			}
-		});
-		this.attrs.putAll(w.attrs);
+		}
 		return this;
 	}
 }

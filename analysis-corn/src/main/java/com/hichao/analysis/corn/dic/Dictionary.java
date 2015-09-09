@@ -62,7 +62,9 @@ public class Dictionary {
     }
 
 	public static void relaod() {
-		instances.forEach((k, v) -> { v.reload(); });
+		for (Dictionary dic : instances.values()) {
+			dic.reload();
+		}
 	}
 
 }
